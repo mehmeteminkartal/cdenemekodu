@@ -1,24 +1,40 @@
 
 #include <stdio.h>
 
+
 int main() {
 	
-	//	20 ile 50 arasındaki çift ve tek sayıların toplamı
+	int A[2][2] = {
+		{1, 2},
+		{4, 5}
+	};
 	
-	int ciftToplam = 0;
-	int tekToplam = 0;
+	int B[2][2] = {
+		{3, 4},
+		{5, 6}
+	};
 	
-	for (int i = 20; i <= 50; i++) {
-		
-		if (i % 2 == 0) {
-			ciftToplam += i;
-		} else {
-			tekToplam += i;
+	int TOPLAM[2][2] = {
+		{0, 0},
+		{0, 0}
+	};
+	
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
+			TOPLAM[i][j] = A[i][j] + B[i][j];
 		}
 	}
 	
-	printf("Tek Toplam: %d\n", tekToplam);
-	printf("Çift Toplam: %d\n", ciftToplam);
+	
+	
+	//	Matris ekrana yazdırma
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
+			printf("%d, ", TOPLAM[i][j]);
+		}
+		printf("\n");
+	}
+	
 	
 	return 0;
 }
