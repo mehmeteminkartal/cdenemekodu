@@ -1,36 +1,24 @@
 
 #include <stdio.h>
 
-
-int asalmi(int sayi) {
-	
-	if (sayi % 2 == 0) {
-		return 0;
-	}
-	
-	for (int i = 2; i < sayi; i++) {
-		if(sayi % i == 0) {
-			return 0;
-		}
-	}
-	
-	return 1;
-}
-
-
 int main() {
 	
-	//	30 ile 40 arasındaki asal sayıların toplamı
+	//	20 ile 50 arasındaki çift ve tek sayıların toplamı
 	
-	int toplam = 0;
+	int ciftToplam = 0;
+	int tekToplam = 0;
 	
-	for(int i = 30; i <= 40; i++) {
-		if (asalmi(i)) {
-			toplam += i;
+	for (int i = 20; i <= 50; i++) {
+		
+		if (i % 2 == 0) {
+			ciftToplam += i;
+		} else {
+			tekToplam += i;
 		}
 	}
 	
-	printf("Toplam: %d\n", toplam);
+	printf("Tek Toplam: %d\n", tekToplam);
+	printf("Çift Toplam: %d\n", ciftToplam);
 	
 	return 0;
 }
